@@ -97,6 +97,11 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    /**
+     * Get position of a certain phone number in the Contact Book
+     * @param number
+     * @return position, else return -1 if not found
+     */
     private int searchIndexByNumber(int number) {
         int i = 0;
         int result = -1;
