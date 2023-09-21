@@ -165,6 +165,12 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
+
+    /**
+     * Displays a message for the case where two or more contacts share phone numbers and when that
+     * does not happen.
+     * @param cBook the contact book
+     */
     private static void existingPhones(ContactBook cBook) {
         if (cBook.existingPhones()) {
             System.out.println("There are contacts that share phone numbers.");

@@ -97,7 +97,7 @@ public class ContactBook {
 
     /**
      * Get position of a certain phone number in the Contact Book
-     * @param number
+     * @param number the phone number
      * @return position, else return -1 if not found
      */
     private int searchIndexByNumber(int number) {
@@ -113,11 +113,16 @@ public class ContactBook {
         return result;
     }
     public boolean hasNumber(int number){return searchIndexByNumber(number) >= 0;}
+
+    /**
+     * Verifies if there are contacts in the contact book that share phone numbers
+     * @return true if two contacts share phone numbers, false otherwise
+     */
     public boolean existingPhones() {
         initializeIterator();
         while(hasNext()){
             Contact current = next();
-            for(int i=0; i < getNumberOfContacts(); i++){
+            for(int i= currentContact; i < getNumberOfContacts(); i++){
                 if(current.getPhone() == contacts[i].getPhone() && !current.getEmail().equals(contacts[i].getEmail()))
                     return true;
             }
