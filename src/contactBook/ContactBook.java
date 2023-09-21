@@ -1,7 +1,5 @@
 package contactBook;
 
-import contactBook.Contact;
-
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -115,4 +113,15 @@ public class ContactBook {
         return result;
     }
     public boolean hasNumber(int number){return searchIndexByNumber(number) >= 0;}
+    public boolean existingPhones() {
+        initializeIterator();
+        while(hasNext()){
+            Contact current = next();
+            for(int i=0; i < getNumberOfContacts(); i++){
+                if(current.getPhone() == contacts[i].getPhone() && !current.getEmail().equals(contacts[i].getEmail()))
+                    return true;
+            }
+        }
+        return false;
+    }
 }
