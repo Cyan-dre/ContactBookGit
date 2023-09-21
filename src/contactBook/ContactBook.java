@@ -123,7 +123,7 @@ public class ContactBook {
         while(hasNext()){
             Contact current = next();
             for(int i= currentContact; i < getNumberOfContacts(); i++){
-                if(current.getPhone() == contacts[i].getPhone() && !current.getEmail().equals(contacts[i].getEmail()))
+                if(current.getPhone() == contacts[i].getPhone())
                     return true;
             }
         }
